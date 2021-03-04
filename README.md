@@ -1,5 +1,6 @@
 # beamer-metro-template
 [![Compile][compile-badge]][compile-yml]
+
 Latex beamer Metropolis template for presentations.
 
 
