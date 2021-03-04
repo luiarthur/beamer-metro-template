@@ -1,0 +1,37 @@
+% Set document attributes:
+% - aspect ratio: 169  for 16:9. (Other options: 43, for 4:3)
+% - font size: 13pt (available font sizes: 9pt - 13pt)
+\documentclass[aspectratio=169, 13pt]{beamer}  % 16:9 aspect ratio, 13pt font size.
+
+% macros for this project.
+\input{macros.tex}
+
+\title[]{A Wonderful Title}
+\author[A. Lui]{Arthur Lui}
+\institute{Department of Statistics\\ UC Santa Cruz}
+
+\begin{document}
+
+% Title Frame
+\frame[noframenumbering, plain]{
+  \date{5 March, 2021}
+  \titlepage
+}
+
+\input{frames/main-frames.tex}
+
+% Appendix
+\appendix
+\setbeamerfont{page number in head/foot}{size=\tiny}
+\setbeamertemplate{footline}[page number]{}
+
+% Uncited papers to add to the references:
+\nocite{abbot1884flatland}
+
+% References
+\begin{frame}[allowframebreaks]{References}
+  \bibliographytrue
+  \bibliography{main}
+\end{frame}
+
+\end{document}

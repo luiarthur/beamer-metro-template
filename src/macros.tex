@@ -1,0 +1,133 @@
+\usepackage[T1]{fontenc}
+
+%%% METROPOLIS THEME %%%
+\usepackage{caption} % For messing with caption setup
+\usetheme[numbering=fraction, progressbar=head]{metropolis}
+
+% FONTS
+\usepackage{fontspec}
+\captionsetup{font=scriptsize, labelfont={bf, scriptsize}}
+\newfontfamily\jso{JuliusSansOne-Regular}[
+  Path=fonts/,
+  BoldFont=JuliusSansOne-Regular,
+  ItalicFont=JuliusSansOne-Regular,
+  BoldItalicFont=JuliusSansOne-Regular
+] 
+\setsansfont{FiraSans-Light}[
+  Path=fonts/,
+  BoldFont=FiraSans-Regular,
+  ItalicFont=FiraSans-LightItalic,
+  BoldItalicFont=FiraSans-Italic
+] 
+% Formatting titles and sections
+\setbeamerfont{title}{parent=structure, series=\mdseries, size=\Huge, family=\jso}
+\setbeamerfont{section title}{parent=structure, series=\Large, family=\jso}
+\setbeamerfont{frametitle}{series=\mdseries, parent=structure, size=\large, family=\jso}
+\setbeamertemplate{itemize items}{
+  % \tiny\raise2.0pt\hbox{\donotjoloroutermaths$\blacktriangleright$}
+  \color{gray}
+  \tiny\raise2.0pt\hbox{\donotcoloroutermaths$\bullet$}
+}  % to set the symbol size and position.
+
+% Some sharp colors.
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{frametitle}{bg=white, fg=black}
+\setbeamercolor{normal text}{fg=black}
+ 
+% Tight lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% For narrower banner
+\makeatletter \setlength{\metropolis@frametitle@padding}{1.2ex} \makeatother
+
+% Bibliography
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+% For adjusting bibliography frames
+\newif\ifbibliography
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+
+% Footer
+\setbeamerfont{page number in head/foot}{size=\tiny}
+% NOTE: Below, using `page number` instead shows the actually number of pdf pages.
+\setbeamertemplate{footline}[frame number]{}
+\usepackage{appendixnumberbeamer}
+
+% Date
+\usepackage[UKenglish]{isodate}  % used by \today 
+\cleanlookdateon  % used by \today
+%%% END METROPOLIS THEME %%%
+
+% Math packages
+\usepackage{amsmath} % for math
+\usepackage{amssymb} % e.g. \Rightarrow
+\usepackage{bm, bbm} % bold math
+
+% Big display
+\newcommand{\ds}{\displaystyle}
+
+% Parenthesis
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\bk}[1]{\left[#1\right]}
+\newcommand{\bc}[1]{\left\{#1\right\}}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+% Derivatives
+\newcommand{\df}[2]{\frac{d#1}{d#2}}
+\newcommand{\ddf}[2]{\frac{d^2#1}{d{#2}^2}}
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\pdd}[2]{\frac{\partial^2#1}{\partial{#2}^2}}
+
+% Distributions.
+\newcommand{\Normal}{\text{Normal}}
+\newcommand{\Beta}{\text{Beta}}
+\newcommand{\GammaDist}{\text{Gamma}}
+\newcommand{\InverseGamma}{\text{InverseGamma}}
+\newcommand{\Uniform}{\text{Uniform}}
+\newcommand{\Dirichlet}{\text{Dirichlet}}
+\newcommand{\Categorical}{\text{Categorical}}
+\newcommand{\TruncatedNormal}{\text{TruncatedNormal}}
+\newcommand{\Binomial}{\text{Binomial}}
+\newcommand{\Bernoulli}{\text{Bernoulli}}
+\newcommand{\Poisson}{\text{Poisson}}
+\newcommand{\LogNormal}{\text{LogNormal}}
+\newcommand{\SkewT}{\text{Skew-$t$}}
+\newcommand{\SkewNormal}{\mathcal{SN}}
+\newcommand{\Dirac}{\text{Dirac}}
+\newcommand{\IBP}{\text{IBP}}
+\newcommand\normalpdf[3]{\frac{1}{\sqrt{2\pi#3}}\exp\bc{\frac{-\p{#1-#2}^2}{2#3}}}
+
+% Statistics
+\newcommand{\E}{\text{E}}  % expectation
+\newcommand{\iid}{\overset{iid}{\sim}}  % independent and identically distributed
+\newcommand{\ind}{\overset{ind}{\sim}}  % independent
+\def\given{~\bigg|~}  % big given, similar to `\mid`
+\def\logit{\text{logit}}  % `logit` in text
+\newcommand{\Ind}[1]{\mathbf{1}\bc{#1}}  % indicator function
+\def\for{~\text{for}~}
+
+% Presentation
+\newcommand{\balert}[1]{\alert{\textbf{#1}}}  % bold alert
+
+% Graphics
+\usepackage{graphicx}  % for figures
+\usepackage{float} % Put figure exactly where I want with [H]
+
+% Adds settings for hyperlinks. (Mainly for table of contents.)
+% TODO: remove?
+% \usepackage{hyperref}
+% \hypersetup{
+%   pdfborder={0 0 0} % removes red box from links
+% }
+
+% Put custom macros for this presentation below:
