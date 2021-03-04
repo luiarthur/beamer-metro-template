@@ -10,6 +10,8 @@ Latex beamer Metropolis template for presentations.
 - commands inside the `src` directory:
     - `make`: compile beamer slides
     - `make watch`: incremental compile beamer slides (watches for edits)
+- Whenever a git tag is created, a GitHub release will be created and a pdf
+  document will be generated in the GitHub release.
 
 
 [compile-badge]: https://github.com/luiarthur/beamer-metro-template/actions/workflows/Compile.yml/badge.svg
